@@ -7,6 +7,7 @@ export const siteSettings = {
   contact: {
     email: "hrwebstudios@gmail.com",
     address: "NSW, Australia",
+    phone: "+61 404 040 404",
     hours: "Mon–Fri: 9am–5pm AEST",
     areaServed: "Australia-wide",
   },
