@@ -35,27 +35,23 @@ export default function Header() {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <Container>
         <div className="header-content">
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <Link href="/" className="logo">
             <Logo size={32} className="logo-icon" />
             <span className="logo-text">{siteSettings.brand.name}</span>
           </Link>
           
           <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
-            <div className="mobile-menu-header">
-              <Link href="/" className="mobile-menu-logo" onClick={() => setIsMobileMenuOpen(false)}>
-                <Logo size={28} className="logo-icon" />
-                <span className="logo-text">{siteSettings.brand.name}</span>
-              </Link>
-              <button
-                className="mobile-menu-close"
-                onClick={() => setIsMobileMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
             <div className="mobile-menu-links">
               {siteSettings.navigation.map((item) => (
                 <Link
@@ -67,13 +63,6 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="nav-link nav-link-cta"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {siteSettings.cta.primary}
-              </Link>
             </div>
           </nav>
 
@@ -86,17 +75,6 @@ export default function Header() {
             >
               {siteSettings.cta.primary}
             </Button>
-            
-            <button
-              className="mobile-menu-toggle"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
           </div>
         </div>
       </Container>
@@ -194,17 +172,23 @@ export default function Header() {
           border: none;
           cursor: pointer;
           padding: var(--space-sm);
-          width: 30px;
-          height: 30px;
+          width: 44px;
+          height: 44px;
+          min-height: 44px;
           justify-content: center;
+          align-items: center;
+          z-index: 1001;
+          position: relative;
+          -webkit-tap-highlight-color: transparent;
         }
 
         .mobile-menu-toggle span {
           display: block;
-          width: 100%;
+          width: 24px;
           height: 2px;
           background-color: #E7ECF3;
           transition: all 0.3s ease;
+          border-radius: 2px;
         }
 
         @media (max-width: 768px) {
@@ -214,14 +198,24 @@ export default function Header() {
 
           .header-content {
             padding: var(--space-md) 0;
+            position: relative;
           }
 
           .header.scrolled .header-content {
             padding: var(--space-sm) 0;
           }
 
+          .mobile-menu-toggle {
+            display: flex;
+            order: -1;
+            margin-right: auto;
+          }
+
           .logo {
             font-size: 1.25rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
           }
 
           .logo-icon {
@@ -233,16 +227,6 @@ export default function Header() {
             display: none;
           }
 
-          .mobile-menu-toggle {
-            display: flex;
-            width: 44px;
-            height: 44px;
-            padding: var(--space-sm);
-            min-height: 44px;
-            justify-content: center;
-            align-items: center;
-          }
-
           .nav {
             position: fixed;
             top: 0;
@@ -251,125 +235,61 @@ export default function Header() {
             bottom: 0;
             background-color: rgba(11, 13, 16, 0.98);
             backdrop-filter: blur(10px);
-            border-top: none;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 0;
             gap: 0;
-            transform: translateX(100%);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
-            overflow-y: auto;
             -webkit-overflow-scrolling: touch;
           }
 
           .nav.open {
-            transform: translateX(0);
             opacity: 1;
             visibility: visible;
-          }
-
-          .mobile-menu-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: var(--space-md) var(--space-lg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            background-color: rgba(11, 13, 16, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 1001;
-          }
-
-          .mobile-menu-logo {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #E7ECF3;
-            text-decoration: none;
-          }
-
-          .mobile-menu-close {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            min-height: 44px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #E7ECF3;
-            padding: var(--space-sm);
-            border-radius: 4px;
-            transition: background-color 0.2s;
-            -webkit-tap-highlight-color: transparent;
-          }
-
-          .mobile-menu-close:hover,
-          .mobile-menu-close:active {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
-
-          .mobile-menu-close:focus-visible {
-            outline: 2px solid #5AA9E6;
-            outline-offset: 2px;
           }
 
           .mobile-menu-links {
             display: flex;
             flex-direction: column;
-            padding: var(--space-lg) 0;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            padding: var(--space-xl);
+            width: 100%;
+            max-width: 100%;
           }
 
           .nav-link {
-            width: 100%;
-            padding: var(--space-lg) var(--space-lg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 1.125rem;
+            width: auto;
+            min-width: 200px;
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.25rem;
             min-height: 56px;
             display: flex;
             align-items: center;
+            justify-content: center;
             color: #B4C0CF;
             text-decoration: none;
             transition: all 0.2s;
             -webkit-tap-highlight-color: transparent;
+            border: none;
+            text-align: center;
           }
 
           .nav-link:hover,
           .nav-link:active {
-            background-color: rgba(255, 255, 255, 0.05);
             color: #E7ECF3;
-            padding-left: calc(var(--space-lg) + var(--space-sm));
-          }
-
-          .nav-link:last-child {
-            border-bottom: none;
-          }
-
-          .nav-link.nav-link-cta {
-            background-color: #5AA9E6;
-            color: #0B0D10;
-            font-weight: 600;
-            margin: var(--space-md) var(--space-lg) 0;
-            border-radius: 8px;
-            border-bottom: none;
-            justify-content: center;
-            min-height: 52px;
-          }
-
-          .nav-link.nav-link-cta:hover,
-          .nav-link.nav-link-cta:active {
-            background-color: #4A95D6;
-            padding-left: var(--space-lg);
+            transform: scale(1.05);
           }
 
           .nav-link:focus-visible {
             outline: 2px solid #5AA9E6;
-            outline-offset: -2px;
+            outline-offset: 4px;
+            border-radius: 4px;
           }
         }
 
@@ -378,8 +298,13 @@ export default function Header() {
             display: block;
           }
 
-          .mobile-menu-header {
+          .mobile-menu-toggle {
             display: none;
+          }
+
+          .logo {
+            position: static;
+            transform: none;
           }
 
           .mobile-menu-links {
@@ -392,27 +317,25 @@ export default function Header() {
 
           .mobile-menu-links .nav-link {
             width: auto;
+            min-width: auto;
             padding: 0;
             border-bottom: none;
             font-size: 0.95rem;
             min-height: auto;
             color: #B4C0CF;
+            transform: none;
           }
 
           .mobile-menu-links .nav-link:hover {
             color: #E7ECF3;
             background-color: transparent;
-            padding-left: 0;
+            transform: none;
           }
 
           .mobile-menu-links .nav-link:active {
             color: #E7ECF3;
             background-color: transparent;
-            padding-left: 0;
-          }
-
-          .mobile-menu-links .nav-link.nav-link-cta {
-            display: none;
+            transform: none;
           }
         }
       `}</style>
