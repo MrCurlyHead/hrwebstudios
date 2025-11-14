@@ -27,13 +27,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link 
-        href={href} 
-        className={baseClasses} 
-        target={target} 
-        rel={rel}
-        onClick={onClick}
-      >
+      <Link href={href} className={baseClasses} target={target} rel={rel}>
         {children}
       </Link>
     )
