@@ -29,3 +29,23 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .serviceCard {
+    padding: var(--space-lg);
+  }
+
+  .serviceIcon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .serviceTitle {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .serviceDescription {
+    font-size: 0.9rem;
+  }
+}
+

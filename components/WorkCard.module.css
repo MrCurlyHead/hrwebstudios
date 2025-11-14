@@ -54,3 +54,34 @@
   text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  .workCard {
+    border-radius: 6px;
+  }
+
+  .workImage {
+    height: 180px;
+  }
+
+  .workContent {
+    padding: var(--space-lg);
+  }
+
+  .workClient {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .workResult {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .workLink {
+    font-size: 0.9rem;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+

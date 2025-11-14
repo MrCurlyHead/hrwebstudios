@@ -223,8 +223,44 @@ export default function Gallery() {
         }
 
         @media (max-width: 768px) {
+          .page-hero {
+            padding: var(--space-2xl) 0 var(--space-xl);
+          }
+
+          .page-hero-subhead {
+            font-size: 1.125rem;
+            padding: 0 var(--space-md);
+          }
+
+          .section {
+            padding: var(--space-2xl) 0;
+          }
+
           .gallery-grid {
             grid-template-columns: 1fr;
+            gap: var(--space-md);
+          }
+
+          .gallery-item {
+            aspect-ratio: 4 / 3;
+          }
+
+          .gallery-overlay {
+            padding: var(--space-md);
+            transform: translateY(0);
+            background: linear-gradient(to top, rgba(11, 13, 16, 0.9), transparent);
+          }
+
+          .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+          }
+
+          .gallery-caption {
+            font-size: 0.95rem;
+          }
+
+          .gallery-tag {
+            font-size: 0.8rem;
           }
         }
       `}</style>

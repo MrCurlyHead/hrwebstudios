@@ -88,8 +88,40 @@
 }
 
 @media (max-width: 768px) {
+  .pageHero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .pageHeroSubhead {
+    font-size: 1.125rem;
+    padding: 0 var(--space-md);
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: var(--space-xl);
+  }
+
   .pricingGrid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .addonsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .sectionCta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .ctaContent h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
   }
 }
 

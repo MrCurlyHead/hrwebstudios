@@ -10,3 +10,9 @@
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+}
+

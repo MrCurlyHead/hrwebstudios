@@ -64,6 +64,13 @@ p {
   max-width: 65ch;
 }
 
+/* Mobile typography adjustments */
+@media (max-width: 768px) {
+  p {
+    font-size: 0.95rem;
+  }
+}
+
 /* Spacing scale */
 :root {
   --space-xs: 0.5rem;   /* 8px */
@@ -74,6 +81,15 @@ p {
   --space-2xl: 3rem;    /* 48px */
   --space-3xl: 4rem;    /* 64px */
   --space-4xl: 6rem;    /* 96px */
+}
+
+/* Mobile-first spacing adjustments */
+@media (max-width: 768px) {
+  :root {
+    --space-2xl: 2rem;    /* 32px on mobile */
+    --space-3xl: 2.5rem;  /* 40px on mobile */
+    --space-4xl: 3rem;    /* 48px on mobile */
+  }
 }
 
 /* Utility classes */
@@ -174,5 +190,24 @@ p {
 .btn-large {
   padding: var(--space-md) var(--space-xl);
   font-size: 1.125rem;
+}
+
+/* Mobile button adjustments - ensure touch targets are at least 44x44px */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-lg);
+  }
+  
+  .btn-small {
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .btn-large {
+    min-height: 48px;
+    padding: var(--space-md) var(--space-lg);
+    font-size: 1rem;
+  }
 }
 
