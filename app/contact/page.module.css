@@ -84,3 +84,52 @@
   }
 }
 
+@media (max-width: 768px) {
+  .pageHero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .pageHeroSubhead {
+    font-size: 1.125rem;
+    padding: 0 var(--space-md);
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .contactLayout {
+    gap: var(--space-xl);
+  }
+
+  .contactInfo h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .contactInfo > p {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .contactDetails {
+    gap: var(--space-lg);
+  }
+
+  .contactDetailItem {
+    gap: var(--space-xs);
+  }
+
+  .contactDetailItem strong {
+    font-size: 0.9rem;
+  }
+
+  .contactDetailItem p {
+    font-size: 0.9rem;
+  }
+
+  .contactFormWrapper {
+    padding: var(--space-lg);
+  }
+}
+

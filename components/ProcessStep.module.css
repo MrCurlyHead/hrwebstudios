@@ -21,3 +21,23 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .processStep {
+    padding: var(--space-lg);
+  }
+
+  .processNumber {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .processTitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .processDescription {
+    font-size: 0.9rem;
+  }
+}
+

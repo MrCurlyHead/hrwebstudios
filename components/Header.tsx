@@ -19,6 +19,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <Container>
@@ -172,44 +184,83 @@ export default function Header() {
         }
 
         @media (max-width: 768px) {
+          .header {
+            padding: 0;
+          }
+
+          .header-content {
+            padding: var(--space-md) 0;
+          }
+
+          .header.scrolled .header-content {
+            padding: var(--space-sm) 0;
+          }
+
+          .logo {
+            font-size: 1.25rem;
+          }
+
+          .logo-icon {
+            width: 28px;
+            height: 28px;
+          }
+
           .header-cta {
             display: none;
           }
 
           .mobile-menu-toggle {
             display: flex;
+            width: 44px;
+            height: 44px;
+            padding: var(--space-sm);
+            min-height: 44px;
+            justify-content: center;
+            align-items: center;
           }
 
           .nav {
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: 0;
             left: 0;
             right: 0;
-            background-color: #0B0D10;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            bottom: 0;
+            background-color: rgba(11, 13, 16, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: none;
             flex-direction: column;
-            padding: var(--space-lg);
-            gap: var(--space-md);
-            transform: translateY(-100%);
+            padding: var(--space-4xl) var(--space-lg) var(--space-lg);
+            gap: 0;
+            transform: translateX(100%);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            z-index: 999;
+            overflow-y: auto;
           }
 
           .nav.open {
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
             visibility: visible;
           }
 
           .nav-link {
             width: 100%;
-            padding: var(--space-md) 0;
+            padding: var(--space-lg) 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 1.125rem;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
           }
 
           .nav-link:last-child {
             border-bottom: none;
+          }
+
+          .nav-link:focus-visible {
+            outline-offset: -2px;
           }
         }
 

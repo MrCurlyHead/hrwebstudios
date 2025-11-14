@@ -284,6 +284,41 @@ export default function ContactForm() {
           outline: 2px solid #5AA9E6;
           outline-offset: 2px;
         }
+
+        @media (max-width: 768px) {
+          .contact-form {
+            gap: var(--space-md);
+          }
+
+          .form-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+          }
+
+          .form-group {
+            gap: var(--space-xs);
+          }
+
+          .form-group input,
+          .form-group select,
+          .form-group textarea {
+            padding: var(--space-md);
+            font-size: 16px; /* Prevents zoom on iOS */
+            min-height: 44px; /* Touch target size */
+          }
+
+          .form-group textarea {
+            min-height: 120px;
+          }
+
+          .form-submit {
+            width: 100%;
+            min-height: 48px;
+            padding: var(--space-md) var(--space-lg);
+            font-size: 1rem;
+            margin-top: var(--space-md);
+          }
+        }
       `}</style>
     </form>
   )
