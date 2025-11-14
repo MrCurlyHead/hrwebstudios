@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { siteSettings } from '@/site-settings'
 import Button from './Button'
 import Container from './Container'
-import Logo from './Logo'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -47,7 +46,6 @@ export default function Header() {
           </button>
 
           <Link href="/" className="logo">
-            <Logo size={32} className="logo-icon" />
             <span className="logo-text">{siteSettings.brand.name}</span>
           </Link>
           
@@ -107,40 +105,39 @@ export default function Header() {
           padding: var(--space-md) 0;
         }
 
+        /* Brand title: Prominent styling, larger and bolder than nav links */
         .logo {
           display: flex;
           align-items: center;
-          gap: var(--space-md);
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #E7ECF3;
           text-decoration: none;
-          transition: all 0.2s ease;
-          letter-spacing: -0.02em;
+          flex-shrink: 0; /* Prevent brand from getting squashed */
         }
 
         .logo:hover {
           opacity: 0.85;
           transform: translateY(-1px);
-        }
-
-        .logo-icon {
-          flex-shrink: 0;
-          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+          transition: all 0.2s ease;
         }
 
         .logo-text {
           display: inline-block;
+          font-size: 1.625rem; /* Larger than nav links (0.95rem) */
+          font-weight: 600; /* Prominent font weight */
+          line-height: 1.2;
+          letter-spacing: -0.02em;
           background: linear-gradient(135deg, #E7ECF3 0%, #B4C0CF 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          transition: all 0.2s ease;
         }
 
+        /* Navigation: Aligned with brand title, reduced spacing for visual connection */
         .nav {
           display: flex;
           gap: var(--space-xl);
           align-items: center;
+          margin-left: var(--space-md); /* Reduced spacing to bring nav closer to brand */
         }
 
         .nav-link {
@@ -218,25 +215,19 @@ export default function Header() {
             margin-right: auto;
           }
 
+          /* Mobile: Brand centered, scaled but still readable */
           .logo {
-            font-size: 1.15rem;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            gap: var(--space-sm);
           }
 
           .logo:hover {
             transform: translateX(-50%) translateY(-1px);
           }
 
-          .logo-icon {
-            width: 28px;
-            height: 28px;
-          }
-
           .logo-text {
-            font-size: 1.15rem;
+            font-size: 1.25rem; /* Slightly smaller on mobile but still prominent */
           }
 
           .header-cta {
