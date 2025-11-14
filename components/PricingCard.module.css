@@ -1,0 +1,72 @@
+.pricingCard {
+  background-color: #11151A;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: var(--space-2xl);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(90, 169, 230, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.pricingCard.recommended {
+  border-color: #5AA9E6;
+  background-color: #151A21;
+}
+
+.recommendedBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5AA9E6;
+  color: #0B0D10;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pricingName {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-sm);
+}
+
+.pricingPrice {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5AA9E6;
+  margin-bottom: var(--space-md);
+}
+
+.pricingIdeal {
+  color: #B4C0CF;
+  margin-bottom: var(--space-xl);
+  max-width: none;
+}
+
+.pricingFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricingFeatures li {
+  color: #B4C0CF;
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.pricingFeatures li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #5AA9E6;
+  font-weight: 600;
+}
+

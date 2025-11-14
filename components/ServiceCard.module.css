@@ -1,0 +1,31 @@
+.serviceCard {
+  background-color: #11151A;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: var(--space-xl);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(90, 169, 230, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.serviceIcon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.serviceTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.serviceDescription {
+  color: #B4C0CF;
+  font-size: 0.95rem;
+  max-width: none;
+  margin: 0;
+}
+

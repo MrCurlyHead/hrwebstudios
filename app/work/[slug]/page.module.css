@@ -1,0 +1,262 @@
+.pageHero {
+  position: relative;
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(90, 169, 230, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heroBgImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  filter: grayscale(100%) brightness(0.3);
+}
+
+.caseStudyHeader {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.caseStudyIndustry {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background-color: rgba(90, 169, 230, 0.1);
+  color: #5AA9E6;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+}
+
+.caseStudyHeader h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.caseStudyOverview {
+  font-size: 1.125rem;
+  color: #B4C0CF;
+  max-width: none;
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.caseStudyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.caseStudySection {
+  margin-bottom: var(--space-3xl);
+}
+
+.caseStudySection:last-child {
+  margin-bottom: 0;
+}
+
+.caseStudySection h2 {
+  margin-bottom: var(--space-lg);
+  font-size: 1.75rem;
+}
+
+.sectionWithImage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.sectionWithImage:last-child {
+  margin-bottom: 0;
+}
+
+.sectionImage {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #151A21;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: var(--space-2xl);
+  height: fit-content;
+}
+
+.imageLeft {
+  order: 1;
+}
+
+.imageRight {
+  order: 2;
+}
+
+.sectionText {
+  order: 2;
+}
+
+.imageRightLayout .sectionText {
+  order: 1;
+}
+
+.imageRightLayout .imageRight {
+  order: 2;
+}
+
+.featureImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 968px) {
+  .sectionWithImage {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .sectionImage {
+    position: relative;
+    top: 0;
+  }
+  
+  .imageLeft,
+  .imageRight {
+    order: 1;
+  }
+  
+  .sectionText {
+    order: 2;
+  }
+}
+
+.caseStudySection p {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+.caseStudyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.caseStudyList li {
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-xl);
+  position: relative;
+  color: #B4C0CF;
+}
+
+.caseStudyList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #5AA9E6;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.caseStudyResults li {
+  font-weight: 500;
+  color: #E7ECF3;
+}
+
+.sectionCta {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(135deg, #11151A 0%, #151A21 100%);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.ctaContent p {
+  margin-bottom: var(--space-2xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionAlt {
+  background-color: #11151A;
+}
+
+.featureShowcase {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.showcaseTitle {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  font-size: 2rem;
+}
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-2xl);
+}
+
+.showcaseItem {
+  background-color: #151A21;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.showcaseItem:hover {
+  transform: translateY(-4px);
+  border-color: rgba(90, 169, 230, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.showcaseImage {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background-color: #0F1318;
+}
+
+.showcaseImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcaseItem h3 {
+  padding: var(--space-lg) var(--space-lg) var(--space-sm);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.showcaseItem p {
+  padding: 0 var(--space-lg) var(--space-lg);
+  color: #B4C0CF;
+  margin: 0;
+  line-height: 1.6;
+}
+

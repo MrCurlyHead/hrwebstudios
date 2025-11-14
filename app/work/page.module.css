@@ -1,0 +1,53 @@
+.pageHero {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHero h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.pageHeroSubhead {
+  font-size: 1.25rem;
+  color: #B4C0CF;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-xl);
+}
+
+.sectionCta {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(135deg, #11151A 0%, #151A21 100%);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.ctaContent p {
+  margin-bottom: var(--space-2xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

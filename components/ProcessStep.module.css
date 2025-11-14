@@ -1,0 +1,23 @@
+.processStep {
+  padding: var(--space-xl);
+}
+
+.processNumber {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(90, 169, 230, 0.2);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.processTitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.processDescription {
+  color: #B4C0CF;
+  max-width: none;
+  margin: 0;
+}
+

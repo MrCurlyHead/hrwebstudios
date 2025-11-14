@@ -1,0 +1,55 @@
+.pageHero {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHero h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.pageHeroSubhead {
+  font-size: 1.125rem;
+  color: #B4C0CF;
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.privacyContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.privacySection {
+  margin-bottom: var(--space-3xl);
+}
+
+.privacySection:last-child {
+  margin-bottom: 0;
+}
+
+.privacySection h2 {
+  margin-bottom: var(--space-lg);
+  font-size: 1.75rem;
+}
+
+.privacySection p {
+  margin-bottom: var(--space-md);
+  max-width: none;
+}
+
+.privacySection ul {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-xl);
+  color: #B4C0CF;
+}
+
+.privacySection li {
+  margin-bottom: var(--space-sm);
+}
+
+.privacySection strong {
+  color: #E7ECF3;
+}
+

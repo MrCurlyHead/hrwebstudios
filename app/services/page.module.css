@@ -1,0 +1,95 @@
+.pageHero {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHero h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.pageHeroSubhead {
+  font-size: 1.25rem;
+  color: #B4C0CF;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.sectionAlt {
+  background-color: #11151A;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.addonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+}
+
+.addonItem {
+  background-color: #151A21;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: var(--space-xl);
+}
+
+.addonItem h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  color: #E7ECF3;
+}
+
+.addonItem p {
+  color: #B4C0CF;
+  margin-bottom: var(--space-md);
+  max-width: none;
+}
+
+.addonPrice {
+  color: #5AA9E6;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.sectionCta {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(135deg, #11151A 0%, #151A21 100%);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.ctaContent p {
+  margin-bottom: var(--space-2xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

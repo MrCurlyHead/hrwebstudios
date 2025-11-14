@@ -1,0 +1,136 @@
+.pageHero {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHero h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.pageHeroSubhead {
+  font-size: 1.25rem;
+  color: #B4C0CF;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.sectionAlt {
+  background-color: #11151A;
+}
+
+.contentBlock {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contentBlock h2 {
+  margin-bottom: var(--space-xl);
+}
+
+.contentBlock p {
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contentBlock p:last-child {
+  margin-bottom: 0;
+}
+
+.teamHeading {
+  text-align: center;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3xl);
+  margin-top: var(--space-2xl);
+}
+
+.teamMember {
+  text-align: center;
+}
+
+.teamImage {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teamPhoto {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(90, 169, 230, 0.2);
+}
+
+.harryPhoto {
+  transform: scale(1.2);
+}
+
+.teamMember h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  color: #E7ECF3;
+}
+
+.teamMember p {
+  color: #B4C0CF;
+  max-width: none;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.valueItem h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  color: #5AA9E6;
+}
+
+.valueItem p {
+  color: #B4C0CF;
+  max-width: none;
+  margin: 0;
+}
+
+.sectionCta {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(135deg, #11151A 0%, #151A21 100%);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.ctaContent p {
+  margin-bottom: var(--space-2xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
