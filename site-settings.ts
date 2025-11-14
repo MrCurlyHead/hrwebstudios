@@ -1,6 +1,6 @@
 export const siteSettings = {
   brand: {
-    name: "HR Studios",
+    name: "HR Web Studios",
     tagline: "Design, build, and manage websites for local legends.",
     logo: "/logo.svg",
   },
