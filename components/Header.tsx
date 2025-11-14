@@ -110,24 +110,31 @@ export default function Header() {
         .logo {
           display: flex;
           align-items: center;
-          gap: var(--space-sm);
+          gap: var(--space-md);
           font-size: 1.5rem;
           font-weight: 700;
           color: #E7ECF3;
           text-decoration: none;
-          transition: opacity 0.2s;
+          transition: all 0.2s ease;
+          letter-spacing: -0.02em;
         }
 
         .logo:hover {
-          opacity: 0.8;
+          opacity: 0.85;
+          transform: translateY(-1px);
         }
 
         .logo-icon {
           flex-shrink: 0;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
         }
 
         .logo-text {
           display: inline-block;
+          background: linear-gradient(135deg, #E7ECF3 0%, #B4C0CF 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .nav {
@@ -212,15 +219,24 @@ export default function Header() {
           }
 
           .logo {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            gap: var(--space-sm);
+          }
+
+          .logo:hover {
+            transform: translateX(-50%) translateY(-1px);
           }
 
           .logo-icon {
             width: 28px;
             height: 28px;
+          }
+
+          .logo-text {
+            font-size: 1.15rem;
           }
 
           .header-cta {
