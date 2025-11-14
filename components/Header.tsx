@@ -233,6 +233,8 @@ export default function Header() {
             left: 0;
             right: 0;
             bottom: 0;
+            width: 100vw;
+            height: 100vh;
             background-color: rgba(11, 13, 16, 0.98);
             backdrop-filter: blur(10px);
             flex-direction: column;
@@ -243,8 +245,9 @@ export default function Header() {
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            z-index: 999;
+            z-index: 1001;
             -webkit-overflow-scrolling: touch;
+            margin: 0;
           }
 
           .nav.open {
