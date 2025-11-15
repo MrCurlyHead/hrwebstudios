@@ -32,39 +32,36 @@ export default function Services() {
           <div className={styles.pricingGrid}>
             <PricingCard
               name="Basic"
-              price="From $2,500"
-              ideal="Perfect for new businesses ready to establish their online presence."
+              price="From $1,000"
+              ideal="Small businesses needing a clean, functional online presence."
               features={[
-                'Up to 5 pages',
+                'Services / Menu – List of offerings',
+                'Book / Schedule / Order – Simple booking or inquiry form',
+                'Contact – Contact form, map, business info',
                 'Modern, responsive design',
-                'Basic CMS setup',
-                'Essential SEO optimization',
-                'Contact form',
-                'Google Analytics setup',
                 'Mobile-optimized',
               ]}
               recommended={false}
-            />
-            <PricingCard
-              name="Standard"
-              price="From $4,500"
-              ideal="Ideal for established businesses ready to grow online."
-              features={[
-                'Up to 10 pages',
-                'Premium design polish',
-                'Full CMS access',
-                'Advanced SEO setup',
-                'Contact form + integrations',
-                'Google Analytics + Search Console',
-                'Blog functionality',
-                'Performance optimization',
-                'Priority support',
-              ]}
-              recommended={true}
+              exampleUrl="/basic-example.html"
             />
             <PricingCard
               name="Pro"
-              price="From $7,500"
+              price="From $2,500"
+              ideal={`Ideal for established businesses ready to grow online.
+                      (Includes all Basic features)`}
+              features={[
+                'SEO optimization',
+                'About – Story, mission, team section',
+                'Gallery / Portfolio – Photos, videos, case studies',
+                'Reviews / Testimonials – Customer feedback',
+                'FAQ – Common questions'
+              ]}
+              recommended={true}
+              exampleUrl="/pro-example.html"
+            />
+            <PricingCard
+              name="Premium"
+              price="From $4,000"
               ideal="For businesses needing advanced features and e-commerce."
               features={[
                 'Unlimited pages',
@@ -80,6 +77,7 @@ export default function Services() {
                 'Ongoing maintenance included (3 months)',
               ]}
               recommended={false}
+              exampleUrl="/premium-example.html"
             />
           </div>
         </Container>

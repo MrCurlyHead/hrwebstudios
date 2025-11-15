@@ -5,6 +5,8 @@
   padding: var(--space-2xl);
   position: relative;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricingCard:hover {
@@ -47,12 +49,14 @@
   color: #B4C0CF;
   margin-bottom: var(--space-xl);
   max-width: none;
+  white-space: pre-line;
 }
 
 .pricingFeatures {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex: 1;
 }
 
 .pricingFeatures li {
@@ -68,5 +72,11 @@
   left: 0;
   color: #5AA9E6;
   font-weight: 600;
+}
+
+.pricingButton {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 

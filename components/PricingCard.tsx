@@ -1,4 +1,5 @@
 import styles from './PricingCard.module.css'
+import Button from './Button'
 
 interface PricingCardProps {
   name: string
@@ -6,6 +7,7 @@ interface PricingCardProps {
   ideal: string
   features: string[]
   recommended?: boolean
+  exampleUrl?: string
 }
 
 export default function PricingCard({
@@ -14,6 +16,7 @@ export default function PricingCard({
   ideal,
   features,
   recommended = false,
+  exampleUrl,
 }: PricingCardProps) {
   return (
     <div className={`${styles.pricingCard} ${recommended ? styles.recommended : ''}`}>
@@ -26,6 +29,13 @@ export default function PricingCard({
           <li key={index}>{feature}</li>
         ))}
       </ul>
+      {exampleUrl && (
+        <div className={styles.pricingButton}>
+          <Button href={exampleUrl} variant="secondary" size="medium" target="_blank" rel="noopener noreferrer">
+            View Example
+          </Button>
+        </div>
+      )}
     </div>
   )
 }
