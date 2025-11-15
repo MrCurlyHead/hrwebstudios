@@ -34,10 +34,12 @@ export default function About() {
               <div className={styles.teamMember}>
                 <div className={styles.teamImage}>
                   <Image
-                    src="/harry-photo.jpg"
+                    src="/harry-photo.png"
                     alt="Harry Roberts"
                     width={200}
                     height={200}
+                    quality={100}
+                    priority
                     className={`${styles.teamPhoto} ${styles.harryPhoto}`}
                   />
                 </div>
